@@ -1,0 +1,31 @@
+html
+    head
+        title= title
+        link(rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css')
+        link(rel='stylesheet' href='/css/style.css')
+        script()
+    body
+
+        div.container
+            if firstTime
+                p Le Questionnaire #{questionnaire.getDescription()} a été créé.
+
+            h2 Choisir la catégorie de question
+
+            form#creerCategorie.form-group(action='javascript:void(0);')
+                div.form-group
+                    label(for='categorie') Catégorie:
+                    select#categorie.form-control(name='etat')
+                        option(value='0', selected=true) Vrai ou faux
+            button.creerCategorie Choisir la catégorie
+
+            br
+            button.accueil Terminer création questionnaire
+
+        if questionnaire
+            input(id='idQuestionnaire' type='hidden' value=questionnaire.getId())
+
+    <script src="//code.jquery.com/jquery-2.2.4.min.js"></script>
+    <script src="//stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/lib/cu05.js"></script>
+    <script type="text/javascript" src="/lib/main.js"></script>

@@ -1,0 +1,54 @@
+html
+    head
+        title= title
+        link(rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css')
+        link(rel='stylesheet' href='/css/style.css')
+        script()
+    body
+
+        div.container
+            if typeof questionnaire !== 'undefined'
+                ul#Questionnaire
+                    li Identifiant : #[span#idQuestion #{questionnaire.getId()}]
+                    if questionnaire.getEtat()
+                        li Etat : Actif
+                        li Description : #{questionnaire.getDescription()}
+                    else
+                        li Etat : Inactif
+                    li Sigle Cours : #{questionnaire.getCours().getSigle()} #{questionnaire.getCours().getGroupe()}
+                    li Description Cours : #{questionnaire.getCours().getTitre()}
+                    each question in questionnaire.getQuestions()
+                        ul
+                            li Id question : #{question.getId()}
+                            li Enonce : #{question.getEnonce()}
+                        br
+
+                if questionnaire.getResultatEtudiant().length > 0
+                    p Etudiant ayant réalisé le questionnaire
+                    each resultat in questionnaire.getResultatEtudiant()
+                        ul
+                        li Id Etudiant : #{resultat[0].getId()}
+                        li Prenom et Nom Etudiant : #{resultat[0].getPrenom()} #{resultat[0].getNomFamille()}
+                        li Resultat : #{resultat[1]}
+                else
+                    p aucun etudiant n'a réalisé le questionnaire
+            else
+                p
+                    em Pas de questionnaire choisi
+
+            br
+            button.continueCours Continuer affichage questionnaire cours courrent
+            br
+            button.continueRecup Continuer affichage questionnaire cours différent
+            br
+            button.accueil Terminer visionnement questionnaire
+            br
+            button.modifier Modifier
+
+        if idcours
+            input(id='idCours' name='idCours' type='hidden' value=idcours)
+
+    <script src="//code.jquery.com/jquery-2.2.4.min.js"></script>
+    <script src="//stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/lib/cu05.js"></script>
+    <script type="text/javascript" src="/lib/main.js"></script>

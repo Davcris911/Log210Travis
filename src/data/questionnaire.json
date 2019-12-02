@@ -1,0 +1,13 @@
+[
+  {
+    "id_questionnaire":1,
+    "description":"Questionnaire 1",
+    "etat": true,
+    "questions":[1,2,3],
+    "resultatEtudiants":[
+      {"id": 1, "resultat": 15},
+      {"id": 3, "resultat": 85}
+    ],
+    "coursId":1
+  }
+]

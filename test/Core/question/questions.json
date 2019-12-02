@@ -1,0 +1,18 @@
+[
+  {
+    "id_question":1,
+    "enonce":"a",
+    "choix_reponse": ["blanc", "noir"],
+    "id_reponse":1,
+    "numero_reponse":1,
+    "explication_reponse":["b", "a"]
+  },
+  {
+    "id_question":2,
+    "enonce":"b",
+    "choix_reponse": ["blanc", "noir"],
+    "id_reponse":2,
+    "numero_reponse":1,
+    "explication_reponse":["a", "b"]
+  }
+]

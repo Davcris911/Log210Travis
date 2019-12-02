@@ -1,0 +1,37 @@
+html
+    head
+        title= title
+        link(rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css')
+        link(rel='stylesheet' href='/css/style.css')
+        script()
+    body
+
+        div.container
+            if typeof questionnaire !== 'undefined'
+                ul#Questionnaire
+                    li Identifiant : #[span#idQuestion #{questionnaire.getId()}]
+                    if questionnaire.getEtat()
+                        li Etat : Actif
+                        li Description : #{questionnaire.getDescription()}
+                    else
+                        li Etat : Inactif
+                    li Sigle Cours : #{questionnaire.getCours().getSigle()} #{questionnaire.getCours().getGroupe()}
+                    li Description : #{questionnaire.getCours().getTitre()}
+                    each question in questionnaire.getQuestions()
+                        ul
+                            li Id question : #{question.getId()}
+                            li Enonce : #{question.getEnonce()}
+                        br
+            else
+                p
+                    em Pas de question choisi
+
+            br
+            button.supprimer Supprimer
+
+            input(id='idQuestionnaire' name='idQuestionnaire' type='hidden' value=questionnaire.getId())
+
+    <script src="//code.jquery.com/jquery-2.2.4.min.js"></script>
+    <script src="//stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/lib/cu05.js"></script>
+    <script type="text/javascript" src="/lib/main.js"></script>

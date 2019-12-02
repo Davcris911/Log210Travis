@@ -1,0 +1,33 @@
+html
+    head
+        title= title
+        link(rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css')
+        link(rel='stylesheet' href='/css/style.css')
+        script()
+    body
+
+        div.container
+
+            table
+                each question in listeQuestions.getListeQuestion()
+                    tr #{question.getId()} , #{question.getEnonce()}
+                    br
+                else
+                    tr
+                        em pas de question
+
+            form#choisirQuestion.form-group(action='javascript:void(0);')
+                dl
+                    dt Identifiant de la question
+                    dd
+                        input(name='idQuestion' type='text')
+                button.choisirQuestion Choisir la question
+
+            br
+            button.accueil Terminer récupération questions
+
+
+    <script src="//code.jquery.com/jquery-2.2.4.min.js"></script>
+    <script src="//stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/lib/cu02.js"></script>
+    <script type="text/javascript" src="/lib/main.js"></script>

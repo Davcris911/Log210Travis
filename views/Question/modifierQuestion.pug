@@ -1,0 +1,39 @@
+html
+    head
+        title= title
+        link(rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css')
+        link(rel='stylesheet' href='/css/style.css')
+        script()
+    body
+
+        div.container
+            if typeof question !== 'undefined'
+                form#modifierQuestion(method='GET' action='/question/modifierQuestion/')
+                    label(for='id') Identifiant :
+                    input#id.form-control(type='text', placeholder='first and last' name='id' value=`${question.getId()}`)
+                    label(for='Enonce') Enonce:
+                        input#Enonce.form-control(type='text', placeholder='first and last' name='Enonce' value=`${question.getEnonce()}`)
+
+                    each choixReponse in question.getChoixReponse()
+                        label(for='ChoixReponse') Enonce:
+                            input#ChoixReponse.form-control(type='text', placeholder='first and last' name='ChoixReponse' value=`${choixReponse}`)
+
+                    each reponse in question.getReponse().getListeTexteReponse()
+                        label(for='Reponse') Reponse:
+                            input#Reponse.form-control(type='text', placeholder='first and last' name='Reponse' value=`${reponse}`)
+                    button.modifier Modifier
+
+            else
+                p
+                    em Pas de question choisi
+
+            br
+            button.continueRecup Continuer recupération
+            button.accueil Terminer la récupération
+
+
+
+    <script src="//code.jquery.com/jquery-2.2.4.min.js"></script>
+    <script src="//stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/lib/cu02.js"></script>
+    <script type="text/javascript" src="/lib/main.js"></script>

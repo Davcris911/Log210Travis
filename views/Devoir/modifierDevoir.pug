@@ -1,0 +1,63 @@
+html
+    head
+        title= title
+        link(rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css')
+        link(rel='stylesheet' href='/css/style.css')
+        script()
+    body
+
+        div.container
+            if typeof devoir !== 'undefined'
+                if devoir.getResultatEtudiant().length <= 0
+
+                        label Identifiant : #[span#idDevoir #{devoir.getId()}]
+                        br
+                        if devoir.getVisible()
+                            label Etat :
+                                input.form-control#visible(name='visible', type='checkbox', value=devoir.getVisible() checked)
+                                br
+                        else
+                            label Etat :
+                                input.form-control#visible(name='visible', type='checkbox', value=devoir.getVisible())
+                        br
+                        label Description :
+                        input.form-control#description(name='description', type='input', value=devoir.getDescription())
+                        br
+                        label Date Debut Devoir :
+                        devoir.getDateDebut()
+                        input#dateDebut.form-control(type='date' name='date_debut' value=((devoir.getDateDebut()).toJSON().split("T",2))[0])
+                        label Date Fin Devoir :
+                        //if(JSON.stringify(devoir.getDateFin()).length<=10)
+                        //      input#dateFin.form-control(type='date' name='date_fin' value=((Date)(devoir.getDateFin()).toJSON().split("T",2))[0])
+                        // else
+                        //     input#dateFin.form-control(type='date' name='date_fin' value=((devoir.getDateFin())))
+                        input#dateFin.form-control(type='date' name='date_fin' value=((devoir.getDateFin()).toJSON().split("T",2))[0])
+                        br
+                        label Note max :
+                        input.form-control#noteMax(name='noteMax', type='input', value=devoir.getNoteMaximale())
+                        br
+                        li Description Cours : #{devoir.getCours().getTitre()}
+                        button.modifierDevoir Modifier
+                else
+                        p Ce devoir ne peut plus être modifier, car au moins un étudiant là compléter.
+
+            else
+                p
+                    em Pas de devoir choisi
+
+
+            br
+            button.continueCours Continuer affichage questionnaire cours courrent
+            br
+            button.continueRecup Continuer affichage questionnaire cours différent
+            br
+            button.accueil Terminer visionnement questionnaire
+
+
+        if idcours
+            input(id='idCours' name='idCours' type='hidden' value=idcours)
+
+    <script src="//code.jquery.com/jquery-2.2.4.min.js"></script>
+    <script src="//stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/lib/cu04.js"></script>
+    <script type="text/javascript" src="/lib/main.js"></script>

@@ -1,0 +1,40 @@
+html
+    head
+        title= title
+        link(rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css')
+        link(rel='stylesheet' href='/css/style.css')
+        script()
+    body
+
+        div.container
+
+            table
+                each devoir in listeDevoirs
+                    tr #{devoir.getId()} , #{devoir.getDescription()}
+                    br
+                else
+                    tr
+                        em pas de Devoirs
+
+            form#choisirDevoir.form-group(action='javascript:void(0);')
+                dl
+                    dt Identifiant du devoir
+                    dd
+                        input(name='idDevoir' type='text')
+                button.choisirDevoir Choisir le Devoir
+                button.correctionDevoir Corriger le Devoir
+                button.supprimerDevoir Supprimer le Devoir
+
+            br
+            button.continueRecup Continuer affichage devoir cours différent
+            button.accueil Terminer visionnement devoirs
+
+        if idcours
+            input(id='idCours' name='idCours' type='hidden' value=idcours)
+
+
+    <script src="//code.jquery.com/jquery-2.2.4.min.js"></script>
+    <script src="//stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/lib/cu03.js"></script>
+    <script type="text/javascript" src="/lib/cu04.js"></script>
+    <script type="text/javascript" src="/lib/main.js"></script>

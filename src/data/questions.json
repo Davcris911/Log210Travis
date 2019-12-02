@@ -1,0 +1,42 @@
+[
+  {
+    "id_question":1,
+    "enonce":"Quelle est la couleur du cheval de Napoléon",
+    "choix_reponse": ["blanc", "noir"],
+    "id_reponse":1,
+    "numero_reponse":1,
+    "explication_reponse":["Bravo", "Il était Blanc le cheval"]
+  },
+  {
+    "id_question":2,
+    "enonce":"aaaaaaaaa",
+    "choix_reponse": ["blanc", "noir"],
+    "id_reponse":1,
+    "numero_reponse":1,
+    "explication_reponse":["Bravo", "Il était Blanc le cheval"]
+  },
+  {
+    "id_question":3,
+    "enonce":"bbbbbbbb",
+    "choix_reponse": ["blanc", "noir"],
+    "id_reponse":1,
+    "numero_reponse":1,
+    "explication_reponse":["Bravo", "Il était Blanc le cheval"]
+  },
+  {
+    "id_question":4,
+    "enonce":"cccccccc",
+    "choix_reponse": ["blanc", "noir"],
+    "id_reponse":1,
+    "numero_reponse":1,
+    "explication_reponse":["Bravo", "Il était Blanc le cheval"]
+  },
+  {
+    "id_question":5,
+    "enonce":"ddddddd",
+    "choix_reponse": ["blanc", "noir"],
+    "id_reponse":1,
+    "numero_reponse":1,
+    "explication_reponse":["Bravo", "Il était Blanc le cheval"]
+  }
+]

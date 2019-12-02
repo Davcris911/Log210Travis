@@ -1,0 +1,70 @@
+[
+  {
+    "id_devoir":1,
+    "description":"Premier Devoir",
+    "note_maximale":100,
+    "date_debut":"2019-01-01",
+    "date_fin":"2020-01-01",
+    "visible":true,
+    "resultatEtudiants":[
+      {"id": 1, "resultat": 15},
+      {"id": 2, "resultat": 72},
+      {"id": 3, "resultat": 34},
+      {"id": 4, "resultat": 100},
+      {"id": 5, "resultat": 19},
+      {"id": 6, "resultat": 25},
+      {"id": 7, "resultat": 86},
+      {"id": 8, "resultat": 93}
+    ],
+    "id_cours":1
+  },
+  {
+    "id_devoir":2,
+    "description":"deux Devoir",
+    "note_maximale":73,
+    "date_debut":"2019-01-01",
+    "date_fin":"2020-01-01",
+    "visible":true,
+    "resultatEtudiants":[],
+    "id_cours":1
+  },
+  {
+    "id_devoir":3,
+    "description":"tres Devoir",
+    "note_maximale":75,
+    "date_debut":"2019-01-01",
+    "date_fin":"2020-01-01",
+    "visible":true,
+    "resultatEtudiants":[
+      {"id": 4, "resultat": 15},
+      {"id": 8, "resultat": 85}
+    ],
+    "id_cours":1
+  },
+  {
+    "id_devoir":4,
+    "description":"quatro Devoir",
+    "note_maximale":60,
+    "date_debut":"2019-01-01",
+    "date_fin":"2020-01-01",
+    "visible":true,
+    "resultatEtudiants":[
+      {"id": 2, "resultat": 15},
+      {"id": 7, "resultat": 85}
+    ],
+    "id_cours":2
+  },
+  {
+    "id_devoir":5,
+    "description":"Five Devoir",
+    "note_maximale":80,
+    "date_debut":"2019-01-01",
+    "date_fin":"2020-01-01",
+    "visible":true,
+    "resultatEtudiants":[
+      {"id": 3, "resultat": 15},
+      {"id": 7, "resultat": 85}
+    ],
+    "id_cours":2
+  }
+]

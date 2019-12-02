@@ -1,0 +1,34 @@
+html
+    head
+        title= title
+        link(rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css')
+        link(rel='stylesheet' href='/css/style.css')
+        script()
+    body
+
+        div.container
+
+            h2 Ajouter des questions au questionnaire
+
+            form#creerAjouterQuestions.form-group(name='creerAjouterQuestions', action='javascript:void(0);')
+                each question in questions.getListeQuestion()
+                    div.form-group
+                        if questionnaire.containsQuestion(question.getId())
+                            label #{question.getEnonce()} , Nombre Occurences : #{occurence.get(question.getId())}
+                            input.form-control(name='question', type='checkbox', value=question.getId() checked)
+                        else
+                            label #{question.getEnonce()} , Nombre Occurences : #{occurence.get(question.getId())}
+                            input.form-control(name='question', type='checkbox', value=question.getId())
+
+            button.creerAjoutQuestion Ajouter les questions
+
+            br
+            button.accueil Créer le questionnaire
+
+        if questionnaire
+            input(id='idQuestionnaire' type='hidden' value=questionnaire.getId())
+
+    <script src="//code.jquery.com/jquery-2.2.4.min.js"></script>
+    <script src="//stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/lib/cu05.js"></script>
+    <script type="text/javascript" src="/lib/main.js"></script>

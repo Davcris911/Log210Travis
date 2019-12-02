@@ -1,0 +1,38 @@
+html
+    head
+        title= title
+        link(rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css')
+        link(rel='stylesheet' href='/css/style.css')
+        script()
+    body
+
+        div.container
+
+
+            form#creerQuestionnaire.form-group(action='javascript:void(0);')
+                div.form-group
+                    label(for='description') Description:
+                    input#description.form-control(name='description', placeholder='Description du questionnaire', value=questionnaire.getDescription(), type='text', required='required' pattern='[A-Za-z0-9]{1,20}')
+                div.form-group
+                    if questionnaire.getEtat()==true
+                        label(for='etat') État:
+                        select#etat.form-control(name='etat', value=0)
+                            option(value='0', selected) Actif
+                            option(value='1' ) Inactif
+                    else
+                        label(for='etat') État:
+                        select#etat.form-control(name='etat', value= 1)
+                            option(value='0') Actif
+                            option(value='1',selected ) Inactif
+            button.modifierDescrQuestionnaire Modifier le questionnaire
+
+            br
+            button.accueil Terminer création questionnaire
+
+            if idcours
+                input(id='idCours' name='idCours' type='hidden' value=idcours)
+
+    <script src="//code.jquery.com/jquery-2.2.4.min.js"></script>
+    <script src="//stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/lib/cu05.js"></script>
+    <script type="text/javascript" src="/lib/main.js"></script>

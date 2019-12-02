@@ -1,0 +1,44 @@
+html
+    head
+        title= title
+        link(rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css')
+        link(rel='stylesheet' href='/css/style.css')
+        script()
+    body
+
+        div.container
+            if typeof cour !== 'undefined'
+                h5 Information du cours
+                ul
+                    li Identifiant : #[span#idCours #{cour._id}]
+                    li Sigle : #{cour._sigle}
+                    li Nombre maximal d'étudiants : #{cour._nbMaxEtudiants}
+                    li Groupe : #{cour._groupe}
+                    li Titre : #{cour._titre}
+                    li Date de début du cours : #{cour._dateDebut}
+                    li Date de fin du cours : #{cour._dateFin}
+
+
+                if cour.getListeEtudiant().length != 0
+                    h5 Etudiant Inscrit
+                    ul
+                    each etudiant in cour.getListeEtudiant()
+                        li #{etudiant.getPrenom()} , #{etudiant.getNomFamille()} , #{etudiant.getEmail()} , #{etudiant.getCodePermanent()}
+                else
+                    h5 Pas d'étudiant inscrit
+
+                if typeof ajout === 'undefined'
+                    button.supprimerCours Supprimer
+
+            else
+                p
+                    em Pas de cours choisi
+
+            br
+            button.accueil Retour a l'accueil
+
+
+    <script src="//code.jquery.com/jquery-2.2.4.min.js"></script>
+    <script src="//stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/lib/cu01.js"></script>
+    <script type="text/javascript" src="/lib/main.js"></script>

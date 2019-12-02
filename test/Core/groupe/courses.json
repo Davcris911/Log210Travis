@@ -1,0 +1,20 @@
+[
+  {
+    "id":1,
+    "sigle":"LOG210",
+    "nb_max_student": 5,
+    "groupe":"01",
+    "titre":"Analyse et conception de logiciels",
+    "date_debut":"2019-09-03",
+    "date_fin":"2019-09-03"
+  },
+  {
+    "id":2,
+    "sigle":"LOG210",
+    "nb_max_student": 5,
+    "groupe":"02",
+    "titre":"Analyse et conception de logiciels",
+    "date_debut":"2019-09-03",
+    "date_fin":"2019-10-03"
+  }
+]

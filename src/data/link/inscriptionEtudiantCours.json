@@ -1,0 +1,42 @@
+[
+  {
+    "id_lien":1,
+    "id_groupe":1,
+    "etudiant_inscrit": [1,2,3,4,5]
+  },
+  {
+    "id_lien":2,
+    "id_groupe":2,
+    "etudiant_inscrit": [1,5]
+  },
+  {
+    "id_lien":3,
+    "id_groupe":3,
+    "etudiant_inscrit": [2,6]
+  },
+  {
+    "id_lien":4,
+    "id_groupe":4,
+    "etudiant_inscrit": [2,6]
+  },
+  {
+    "id_lien":5,
+    "id_groupe":5,
+    "etudiant_inscrit": [3,7]
+  },
+  {
+    "id_lien":6,
+    "id_groupe":6,
+    "etudiant_inscrit": [3,7]
+  },
+  {
+    "id_lien":7,
+    "id_groupe":7,
+    "etudiant_inscrit": [4,8]
+  },
+  {
+    "id_lien":8,
+    "id_groupe":8,
+    "etudiant_inscrit": [4,8]
+  }
+]

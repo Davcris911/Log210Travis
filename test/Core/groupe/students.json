@@ -1,0 +1,16 @@
+[
+  {
+    "id": 1,
+    "first_name": "firstname1",
+    "last_name": "last_name1",
+    "email": "student+1@gmail.com",
+    "permanent_code": "lastf1"
+  },
+  {
+    "id": 2,
+    "first_name": "firstname2",
+    "last_name": "last_name2",
+    "email": "student+2@gmail.com",
+    "permanent_code":"lastf2"
+  }
+]

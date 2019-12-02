@@ -1,0 +1,51 @@
+html
+    head
+        title= title
+        link(rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css')
+        link(rel='stylesheet' href='/css/style.css')
+        script()
+    body
+
+        div.container
+            h2 Liste des devoirs
+            table
+                each devoir in listeDevoir
+                    tr #{devoir.getId()} , #{devoir.getDescription()}
+                    br
+                else
+                    tr
+                        em pas de devoir
+
+            br
+
+            br
+
+            form#creerDevoir.form-group(action='javascript:void(0);')
+                div.form-group
+                    label Description:
+                    input#description.form-control(name='description', placeholder='Description du devoir', type='text', required='required' pattern='[A-Za-z0-9]{1,20}')
+                div.form-group
+                    label Note maximum du devoir
+                    input#noteMax.form-control(name='noteMax', placeholder='Note maximum du devoir', type='text', required='required' pattern='{1,100}')
+                div.form-group
+                    label Date Debut Devoir :
+                    input#date_debut.form-control(type='date',name='date_debut', required='required' pattern='[A-Za-z0-9]{1,20}')
+                    label Date Fin Devoir :
+                    input#date_fin.form-control(type='date', name='date_fin', required='required' pattern='[A-Za-z0-9]{1,20}')
+                div.form-group
+                    label État:
+                    select#etat_visible.form-control(name='etat_visible')
+                        option(value='0', selected=true) Visible
+                        option(value='1', selected=false) Non visible
+            button.creerDevoir Créer le devoir
+
+            br
+            button.accueil Terminer création devoir
+
+            if idCours
+                input(id='idCours' name='idCours' type='hidden' value=idCours)
+
+    <script src="//code.jquery.com/jquery-2.2.4.min.js"></script>
+    <script src="//stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/lib/cu04.js"></script>
+    <script type="text/javascript" src="/lib/main.js"></script>

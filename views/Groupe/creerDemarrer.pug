@@ -1,0 +1,35 @@
+html
+    head
+        title= title
+        link(rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css')
+        link(rel='stylesheet' href='/css/style.css')
+        script()
+    body
+
+        div.container
+
+            table
+                each cour in listeCours.getListeCours()
+                    tr #{cour._id} , #{cour._sigle} , #{cour._groupe}
+                    br
+                else
+                    tr
+                        em Il n'existe aucun cours dans le système
+
+            form#choisirCours.form-group(action='javascript:void(0);')
+                dl
+                    dt Identifiant du cours
+                    dd
+                        input(name='sigleCours' type='text')
+                button.creerCours Choisir le cours
+
+            br
+            button.accueil Retour a l'accueil
+
+        input(id='idCours' name='idCours' type='hidden' value=listeCoursExistant)
+        input(id='maxId' name='maxId' type='hidden' value=listeCours.getListeCours().length)
+
+    <script src="//code.jquery.com/jquery-2.2.4.min.js"></script>
+    <script src="//stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/lib/cu01.js"></script>
+    <script type="text/javascript" src="/lib/main.js"></script>

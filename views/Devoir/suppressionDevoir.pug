@@ -1,0 +1,52 @@
+html
+    head
+        title= title
+        link(rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css')
+        link(rel='stylesheet' href='/css/style.css')
+        script()
+    body
+
+        div.container
+            if typeof devoir !== 'undefined'
+                ul#Questionnaire
+                    li Identifiant : #[span#idQuestion #{devoir.getId()}]
+                    if devoir.getVisible()
+                        li Etat : Actif
+                        li Description : #{devoir.getDescription()}
+                    else
+                        li Etat : Inactif
+
+                    li Date Debut Devoir : #{devoir.getDateDebut()}
+                    li Date Fin Devoir : #{devoir.getDateFin()}
+
+                    li Description Cours : #{devoir.getCours().getTitre()}
+
+                if devoir.getResultatEtudiant().length > 0
+                    li Note Maximale : #{devoir.getNoteMaximale()}
+
+                    p Résultat des Étudiants
+                        if trie == null
+                            #{trie=0}
+
+                        each resultat in devoir.getResultatEtudiant(trie)
+                            ul
+                            li Id Etudiant : #{resultat[0].getId()}
+                            li Prenom et Nom Etudiant : #{resultat[0].getPrenom()} #{resultat[0].getNomFamille()}
+                            li Resultat : #{resultat[1]}
+
+                else
+                    p Aucun etudiant n'a réalisé le questionnaire
+            else
+                p
+                    em Pas de devoir choisi
+
+            button.supprimer Supprimer
+
+
+        if idDevoir
+            input(id='idDevoir' name='idDevoir' type='hidden' value=idDevoir)
+
+    <script src="//code.jquery.com/jquery-2.2.4.min.js"></script>
+    <script src="//stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/lib/cu04.js"></script>
+    <script type="text/javascript" src="/lib/main.js"></script>

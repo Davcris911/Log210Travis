@@ -1,0 +1,50 @@
+html
+    head
+        title= title
+        link(rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css')
+        link(rel='stylesheet' href='/css/style.css')
+        script()
+    body
+
+        div.container
+            if typeof devoir !== 'undefined'
+                ul#Questionnaire
+                    li Identifiant : #[span#idDevoir #{devoir.getId()}]
+                    if devoir.getVisible()
+                        li Etat : Actif
+                        li Description : #{devoir.getDescription()}
+                    else
+                        li Etat : Inactif
+
+                    li Date Debut Devoir : #{devoir.getDateDebut()}
+                    li Date Fin Devoir : #{devoir.getDateFin()}
+
+                    li Description Cours : #{devoir.getCours().getTitre()}
+                    li Note Maximale : #{devoir.getNoteMaximale()}
+
+                if devoir.getResultatEtudiant().length > 0
+                    p Résultat des Étudiants
+                        each resultat in devoir.getResultatEtudiant(trie)
+                            ul
+                            li Id Etudiant : #{resultat[0].getId()}
+                            li Prenom et Nom Etudiant : #{resultat[0].getPrenom()} #{resultat[0].getNomFamille()}
+                            li Resultat : #{resultat[1]}
+                            button.telechargement Téléchargement du devoir
+                else
+                    p Aucun etudiant n'a réalisé le devoir
+                    button.modifier Modifier le devoir
+                    br
+            else
+                p
+                    em Pas de devoir choisi
+            br
+            button.accueil Terminer visionnement Devoir
+
+
+        if idcours
+            input(id='idCours' name='idCours' type='hidden' value=idcours)
+
+    <script src="//code.jquery.com/jquery-2.2.4.min.js"></script>
+    <script src="//stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/lib/cu03.js"></script>
+    <script type="text/javascript" src="/lib/main.js"></script>

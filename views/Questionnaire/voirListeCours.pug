@@ -1,0 +1,37 @@
+html
+    head
+        title= title
+        link(rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css')
+        link(rel='stylesheet' href='/css/style.css')
+        script()
+    body
+
+        div.container
+
+            table
+                each cour in listeCours.getListeCours()
+                    tr #{cour._id} , #{cour._sigle} , #{cour._groupe}, Nombre Questionnaire : #{occurence.get(cour._id)}
+                    br
+                else
+                    tr
+                        em pas de cours
+
+            form#choisirCours.form-group(action='javascript:void(0);')
+                dl
+                    dt Identifiant du cours
+                    dd
+                        input(name='sigleCours' type='text')
+
+            if flag == "creer"
+                button.choisirCoursCreer Choisir le cours
+            else if flag == "voir"
+                button.choisirCoursVoir Choisir le cours
+
+            br
+            button.accueil Retour a l'accueil
+
+
+    <script src="//code.jquery.com/jquery-2.2.4.min.js"></script>
+    <script src="//stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/lib/cu05.js"></script>
+    <script type="text/javascript" src="/lib/main.js"></script>
