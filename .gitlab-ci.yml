@@ -6,7 +6,7 @@ stages:
 
 cache:
   paths:
-    - node_modules/
+    - node_modules/asadsaddas
 
 install_dependencies:
   stage: build
