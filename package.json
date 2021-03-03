@@ -48,7 +48,7 @@
         "gulp-cli": "^2.2.0",
         "morgan": "^1.9.1",
         "node-twinkle": "0.0.3",
-        "pug": "^2.0.4",
+        "pug": "^3.0.1",
         "xmlhttprequest": "^1.8.0"
     }
 }
